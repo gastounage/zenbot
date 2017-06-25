@@ -17,7 +17,8 @@ gdax_ltc_eur:
     - /app/node_modules
   links:
     - mongodb
-  command: /bin/true ; ./zenbot.sh trade --conf ./conf.ltc_eur.js
+  command: ./zenbot.sh trade --conf ./conf.ltc_eur.js
+  restart: always
 
 gdax_eth_btc:
   build: .
@@ -27,7 +28,8 @@ gdax_eth_btc:
     - /app/node_modules
   links:
     - mongodb
-  command: /bin/true ; echo "./zenbot.sh trade --conf ./conf.eth_btc.js"
+  command: ./zenbot.sh trade --conf ./conf.eth_btc.js
+  restart: always
 
 gdax_eth_eur:
   build: .

@@ -1,11 +1,43 @@
-server:
+gdax_ltc_btc:
   build: .
+  tty: true
   volumes:
     - .:/app
     - /app/node_modules
   links:
     - mongodb
-  command: ./zenbot.sh trade --paper
+  command: ./zenbot.sh trade --conf ./conf.ltc_btc.js
+  restart: always
+
+gdax_ltc_eur:
+  build: .
+  tty: true
+  volumes:
+    - .:/app
+    - /app/node_modules
+  links:
+    - mongodb
+  command: /bin/true ; ./zenbot.sh trade --conf ./conf.ltc_eur.js
+
+gdax_eth_btc:
+  build: .
+  tty: true
+  volumes:
+    - .:/app
+    - /app/node_modules
+  links:
+    - mongodb
+  command: /bin/true ; echo "./zenbot.sh trade --conf ./conf.eth_btc.js"
+
+gdax_eth_eur:
+  build: .
+  tty: true
+  volumes:
+    - .:/app
+    - /app/node_modules
+  links:
+    - mongodb
+  command: ./zenbot.sh trade --conf ./conf.eth_eur.js
   restart: always
 
 mongodb:
@@ -13,6 +45,7 @@ mongodb:
   volumes_from:
     - mongodb-data
   command: mongod --smallfiles
+  restart: always
 
 mongodb-data:
   image: mongo:latest

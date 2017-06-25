@@ -6,7 +6,7 @@ gdax_ltc_btc:
     - /app/node_modules
   links:
     - mongodb
-  command: ./zenbot.sh backfill gdax.LTC-BTC; ./zenbot.sh sim --sell_pct 24 gdax.LTC-BTC; ./zenbot.sh trade --buy_pct 24 --sell_pct 24 gdax.LTC-BTC
+  command: ./zenbot.sh backfill gdax.LTC-BTC; ./zenbot.sh sim gdax.LTC-BTC; ./zenbot.sh trade --buy_pct 24 --sell_pct 24 gdax.LTC-BTC
   restart: always
 
 gdax_ltc_eur:
@@ -17,7 +17,7 @@ gdax_ltc_eur:
     - /app/node_modules
   links:
     - mongodb
-  command: ./zenbot.sh backfill gdax.LTC-EUR; ./zenbot.sh sim --sell_pct 24 gdax.LTC-EUR; ./zenbot.sh trade --buy_pct 24 --sell_pct 24 gdax.LTC-EUR
+  command: ./zenbot.sh backfill gdax.LTC-EUR; ./zenbot.sh sim gdax.LTC-EUR; ./zenbot.sh trade --buy_pct 24 --sell_pct 24 gdax.LTC-EUR
   restart: always
 
 gdax_eth_btc:
@@ -28,7 +28,7 @@ gdax_eth_btc:
     - /app/node_modules
   links:
     - mongodb
-  command: ./zenbot.sh backfill gdax.ETH-BTC; ./zenbot.sh sim --sell_pct 24 gdax.ETH-BTC; ./zenbot.sh trade --buy_pct 24 --sell_pct 24 gdax.ETH-BTC
+  command: ./zenbot.sh backfill gdax.ETH-BTC; ./zenbot.sh sim gdax.ETH-BTC; ./zenbot.sh trade --buy_pct 24 --sell_pct 24 gdax.ETH-BTC
   restart: always
 
 gdax_eth_eur:
@@ -39,7 +39,7 @@ gdax_eth_eur:
     - /app/node_modules
   links:
     - mongodb
-  command: ./zenbot.sh backfill gdax.ETH-EUR; ./zenbot.sh sim --sell_pct 24 gdax.ETH-EUR; ./zenbot.sh trade --buy_pct 24 --sell_pct 24 gdax.ETH-EUR
+  command: ./zenbot.sh backfill gdax.ETH-EUR; ./zenbot.sh sim gdax.ETH-EUR; ./zenbot.sh trade --buy_pct 24 --sell_pct 24 gdax.ETH-EUR
   restart: always
 
 gdax_btc_eur:
@@ -50,7 +50,7 @@ gdax_btc_eur:
     - /app/node_modules
   links:
     - mongodb
-  command: ./zenbot.sh backfill gdax.BTC-EUR;./zenbot.sh sim --sell_pct 24 gdax.BTC-EUR; ./zenbot.sh trade --buy_pct 24 --sell_pct 24 gdax.BTC-EUR
+  command: ./zenbot.sh backfill gdax.BTC-EUR;./zenbot.sh sim gdax.BTC-EUR; ./zenbot.sh trade --buy_pct 24 --sell_pct 24 gdax.BTC-EUR
   restart: always
 
 mongodb:
